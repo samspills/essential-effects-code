@@ -4,7 +4,7 @@ import scala.concurrent.duration.FiniteDuration
 
 object Timing extends App {
   val clock: MyIO[Long] =
-    ??? // <1>
+    MyIO(() => System.currentTimeMillis()) // omit parens or not? parens indicate side effecting?????
 
   def time[A](action: MyIO[A]): MyIO[(FiniteDuration, A)] =
     ??? // <2>
